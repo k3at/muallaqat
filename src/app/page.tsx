@@ -4,7 +4,8 @@ import { SiteFooter } from "@/components/site-footer";
 import { Badge, Card, Container, SectionHeading } from "@/components/ui/layout";
 import { buttonClass } from "@/components/ui/button";
 import { site } from "@/lib/site";
-import { poems, bestVerses } from "@/data/poems";
+import { poems } from "@/data/poems";
+import { bestVerses } from "@/data/best-verses";
 
 export const metadata = {
   title: `${site.name} — ${site.tagline}`,
