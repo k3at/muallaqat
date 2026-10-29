@@ -62,7 +62,7 @@ export default async function PoemDetailPage({ params }: Props) {
               {poem.verses.map((verse, index) => (
                 <p
                   key={index}
-                  className="text-foreground border-border-subtle flex flex-col gap-1 border-b pb-3 text-center text-base leading-8 last:border-0 sm:flex-row sm:justify-between sm:gap-6"
+                  className="text-foreground border-border-subtle flex flex-col gap-1 border-b pb-3 text-center text-base leading-8 last:border-0 sm:flex-row sm:justify-between sm:gap-6 font-serif"
                 >
                   <span className="sm:w-1/2 sm:text-end">{verse[0]}</span>
                   <span className="text-muted hidden sm:inline">*</span>

@@ -39,7 +39,7 @@ export default function BestPage() {
                 <div className="grid gap-5 md:grid-cols-2">
                   {group.verses.map((v) => (
                     <Card key={v.text}>
-                      <p className="text-foreground text-lg leading-8">{v.text}</p>
+                      <p className="text-foreground text-lg leading-8 font-serif">{v.text}</p>
                       <p className="text-muted mt-3 text-sm font-semibold">
                         — {v.author}
                         {v.theme ? ` · ${v.theme}` : ""}

@@ -4,7 +4,8 @@
 
 @theme {
   --font-sans:
-    var(--font-cairo), "Segoe UI", Tahoma, "Noto Sans Arabic", system-ui, sans-serif;
+    var(--font-tajawal), "Segoe UI", Tahoma, "Noto Sans Arabic", system-ui, sans-serif;
+  --font-serif: var(--font-amiri), "Amiri", "Traditional Arabic", serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --color-brand-50: #eef2ff;

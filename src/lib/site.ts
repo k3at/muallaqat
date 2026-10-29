@@ -10,6 +10,7 @@ export const site = {
     { label: "الرئيسية", href: "/" },
     { label: "المعلقات", href: "/poems" },
     { label: "أجمل ما ذكر", href: "/best" },
+    { label: "أشهر 100", href: "/top100" },
   ],
   links: {
     github: "https://github.com",
