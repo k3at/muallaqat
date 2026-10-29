@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { Card, Container, SectionHeading } from "@/components/ui/layout";
 import { site } from "@/lib/site";
 import { famousPoems } from "@/data/famous-poems";
+import { poemContents } from "@/data/famous-poems-content";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -30,6 +31,7 @@ export default async function FamousPoemDetailPage({ params }: Props) {
     notFound();
   }
   const poem = famousPoems[index];
+  const content = poem.content ?? poemContents[poem.title];
   const searchUrl =
     poem.sourceUrl ??
     `https://arabic-poetry.net/search?q=${encodeURIComponent(poem.title + " " + poem.poet)}`;
@@ -59,10 +61,10 @@ export default async function FamousPoemDetailPage({ params }: Props) {
             </Card>
           ) : null}
 
-          {poem.content ? (
+          {content ? (
             <Card className="mt-8">
               <div className="space-y-3 text-center">
-                {poem.content.split("\n").map((line, i) => (
+                {content.split("\n").map((line, i) => (
                   <p key={i} className="text-foreground text-base leading-8 font-serif">
                     {line}
                   </p>
@@ -90,7 +92,7 @@ export default async function FamousPoemDetailPage({ params }: Props) {
             </a>
           </div>
 
-          {!poem.content && !poem.poemSlug ? (
+          {!content && !poem.poemSlug ? (
             <p className="text-muted mt-6 text-center text-sm">
               النص الكامل غير متوفر في هذا الإصدار. يمكن إضافته عبر حقل content في
               src/data/famous-poems.ts.
