@@ -34,7 +34,7 @@ export default async function FamousPoemDetailPage({ params }: Props) {
   const content = poem.content ?? poemContents[poem.title];
   const searchUrl =
     poem.sourceUrl ??
-    `https://arabic-poetry.net/search?q=${encodeURIComponent(poem.title + " " + poem.poet)}`;
+    `https://www.google.com/search?q=${encodeURIComponent(poem.title + " " + poem.poet + " نص كامل")}`;
 
   return (
     <>
