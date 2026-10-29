@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Card, Container, SectionHeading } from "@/components/ui/layout";
@@ -38,20 +39,31 @@ export default function Top100Page() {
                   {group.era} ({group.poems.length})
                 </h2>
                 <div className="grid gap-5 md:grid-cols-2">
-                  {group.poems.map((p, idx) => (
-                    <Card key={`${p.title}-${p.poet}-${idx}`}>
-                      <h3 className="text-foreground text-lg font-bold">{p.title}</h3>
-                      <p className="text-muted mt-1 text-sm">{p.poet}</p>
-                      {p.theme ? (
-                        <p className="text-muted mt-2 text-xs">الموضوع: {p.theme}</p>
-                      ) : null}
-                      {p.opening ? (
-                        <p className="text-foreground mt-3 text-base leading-8 font-serif">
-                          «{p.opening}»
-                        </p>
-                      ) : null}
-                    </Card>
-                  ))}
+                  {group.poems.map((p, idx) => {
+                    const globalIndex = famousPoems.indexOf(p);
+                    return (
+                      <Card key={`${p.title}-${p.poet}-${idx}`}>
+                        <h3 className="text-foreground text-lg font-bold">{p.title}</h3>
+                        <p className="text-muted mt-1 text-sm">{p.poet}</p>
+                        {p.theme ? (
+                          <p className="text-muted mt-2 text-xs">الموضوع: {p.theme}</p>
+                        ) : null}
+                        {p.opening ? (
+                          <p className="text-foreground mt-3 text-base leading-8 font-serif">
+                            «{p.opening}»
+                          </p>
+                        ) : null}
+                        <div className="mt-4">
+                          <Link
+                            href={`/top100/${globalIndex}` as any}
+                            className="text-brand-600 dark:text-brand-300 text-sm font-semibold hover:underline"
+                          >
+                            قراءة / التفاصيل ←
+                          </Link>
+                        </div>
+                      </Card>
+                    );
+                  })}
                 </div>
               </section>
             ))}
